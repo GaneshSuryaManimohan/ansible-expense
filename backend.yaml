@@ -16,8 +16,8 @@
         name: "{{item}}"
         state: installed
       loop:
-        - nodejs
-        - mysql
+      - nodejs
+      - mysql
     
     - name: add expense user
       ansible.builtin.user:
@@ -67,7 +67,6 @@
     
     - name: daemon reload
       ansible.builtin.systemd_service:
-        name: backend.service
         daemon_reload: true
     
     - name: start and enable backend service
